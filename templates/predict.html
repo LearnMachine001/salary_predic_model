@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salary Prediction Dashboard</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='predict.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            SalaryPredict AI
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="{{ url_for('home') }}">Home</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('about') }}">About</a>
+            </li>
+
+            <li>
+                <a class="active"
+                    href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+            </li>
+
+            {% if session.get('user') %}
+
+            <li>
+                <a href="{{ url_for('logout') }}">
+                    Logout
+                </a>
+            </li>
+
+            {% else %}
+
+            <li>
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+            </li>
+
+            {% endif %}
+
+        </ul>
+
+    </nav>
+
+    <!-- Prediction Form -->
+
+    <section class="dashboard">
+
+        <div class="predict-box">
+
+            <h1>Salary Prediction</h1>
+
+            <p>
+                Enter your details below to predict
+                your expected salary.
+            </p>
+
+            <form action="/predict" method="POST">
+
+                <input
+                    type="number"
+                    name="experience"
+                    placeholder="Years of Experience"
+                    required>
+
+                <!-- <input
+                    type="number"
+                    name="interview_score"
+                    placeholder="Interview Score (1-10)"
+                    required> -->
+
+                <button type="submit">
+                    Predict Salary
+                </button>
+
+            </form>
+
+            {% if prediction %}
+
+            <div class="result">
+
+                <h2>
+                    Predicted Salary:
+                </h2>
+
+                <h3>
+                    ₹ {{ prediction }}
+                </h3>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+</body>
+</html>

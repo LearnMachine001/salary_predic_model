@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Salary Predictor AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SalaryPredict AI</div>
+
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-section">
+
+        <h1>About Salary Prediction Project</h1>
+
+        <p class="intro">
+            Salary Predictor AI is a Machine Learning based web application
+            that predicts an employee's salary based on years of experience.
+            The project demonstrates the complete Machine Learning workflow,
+            from data preprocessing and model training to deployment using Flask.
+        </p>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2>🎯 Project Goal</h2>
+                <p>
+                    Predict employee salary accurately using experience data
+                    and provide instant results through a user-friendly web interface.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>🤖 Machine Learning Model</h2>
+                <p>
+                    Linear Regression is used because salary is a continuous
+                    variable and has a direct relationship with years of experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>📊 Data Analysis</h2>
+                <p>
+                    Data preprocessing, cleaning, feature selection,
+                    visualization and model training were performed
+                    using Python libraries.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>🐍 Python Libraries</h2>
+                <p>
+                    NumPy, Pandas, Matplotlib, Scikit-Learn,
+                    Joblib and Flask were used throughout the project.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>🌐 Web Development</h2>
+                <p>
+                    Flask powers the backend while HTML and CSS
+                    create an attractive and responsive user interface.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>💾 Model Deployment</h2>
+                <p>
+                    The trained model is saved using Joblib and loaded
+                    dynamically within Flask for real-time predictions.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="workflow">
+
+            <h2>Project Workflow</h2>
+
+            <div class="steps">
+
+                <div class="step">Data Collection</div>
+                <div class="step">Data Preprocessing</div>
+                <div class="step">Model Training</div>
+                <div class="step">Model Evaluation</div>
+                <div class="step">Joblib Serialization</div>
+                <div class="step">Flask Deployment</div>
+
+            </div>
+
+        </div>
+
+        <div class="tech-stack">
+
+            <h2>Technology Stack</h2>
+
+            <ul>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+                <li>Scikit-Learn</li>
+                <li>Linear Regression</li>
+                <li>Joblib</li>
+                <li>Flask</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

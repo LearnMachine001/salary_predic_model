@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Salary Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            Salary Predictor
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            <li><a href="{{ url_for('dashboard') }}" class="active">Dashboard</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="container">
+
+        <h1>Prediction History</h1>
+
+        {% if history %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Experience (Years)</th>
+                    <th>Predicted Salary</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for row in history %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row[0] }}</td>
+                    <td>₹ {{ "{:,.2f}".format(row[1]) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+            <p class="no-data">No prediction history available.</p>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

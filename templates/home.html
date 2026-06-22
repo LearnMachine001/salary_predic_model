@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salary Prediction AI</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='home.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            SalaryPredict AI
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="{{ url_for('home') }}">Home</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('about') }}">About</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('signup')}}">
+                    Sign Up
+                </a>
+            </li>
+
+            {% if session.get('user') %}
+
+            <li>
+                <a href="{{ url_for('logout') }}">
+                    Logout
+                </a>
+            </li>
+            
+            {% else %}
+
+            <li>
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+            </li>
+
+            {% endif %}
+
+
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>
+            Predict Your Salary Using AI
+        </h1>
+
+        <p>
+
+            Smart Salary Prediction System built using
+            Machine Learning, Flask and Linear Regression.
+
+            Predict your expected salary instantly
+            based on years of experience.
+
+        </p>
+
+        {% if session.get('user') %}
+
+        <h3 class="welcome">
+            Welcome Back, {{ session['user'] }} 👋
+        </h3>
+
+        {% endif %}
+
+        <a href="{{ url_for('predict') }}"
+            class="btn">
+
+            Start Prediction
+
+        </a>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <h2>Project Features</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>🤖 Machine Learning</h3>
+
+                <p>
+                    Uses Linear Regression Model
+                    for salary prediction.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>⚡ Fast Predictions</h3>
+
+                <p>
+                    Get salary estimates
+                    instantly in seconds.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🌐 Flask Deployment</h3>
+
+                <p>
+                    Professional web application
+                    built using Flask Framework.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>📊 Data Driven</h3>
+
+                <p>
+                    Predictions based on trained
+                    machine learning model.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Tech Stack -->
+
+    <section class="tech-stack">
+
+        <h2>Technology Stack</h2>
+
+        <div class="tech-list">
+
+            <span>Python</span>
+            <span>NumPy</span>
+            <span>Pandas</span>
+            <span>Matplotlib</span>
+            <span>Scikit-Learn</span>
+            <span>Linear Regression</span>
+            <span>Joblib</span>
+            <span>Flask</span>
+            <span>HTML</span>
+            <span>CSS</span>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Salary Prediction AI | Developed by Vikas kumar
+        </p>
+
+    </footer>
+
+</body>
+</html>

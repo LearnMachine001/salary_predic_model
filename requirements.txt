@@ -1,0 +1,8 @@
+Flask
+Python
+numpy
+scikit-learn
+joblib
+gunicorn
+HTML
+CSS
